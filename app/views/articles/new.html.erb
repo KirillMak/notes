@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" %>
+
 </head>
 <body>
 <%= form_with scope: :article, url: articles_path, local: true do |form| %>
@@ -21,21 +23,24 @@
       </div>
           <% /end /%>-->
      
-      <p>
-      <%= form.label :title %><br>
-      <%= form.text_field :title %>
-    </p>
+    <div class="form-group" id = "article">
+        <%= form.label :title %>
+      <br>
+        <%= form.text_field :title, class: "form-control"%>
+        <%= form.label :text %>
+      <br>
+        <%= form.text_area :text , class: "form-control", rows: "10"%>
+      <br>
+      <p>
+        <%= form.submit %>
+      </p>
+      <%= link_to 'Back', articles_path %>
+    </div>
+      
      
-      <p>
-      <%= form.label :text %><br>
-      <%= form.text_area :text %>
-    </p>
-     
-      <p>
-      <%= form.submit %>
-    </p>
+      
     <% end %>
  
-    <%= link_to 'Back', articles_path %>
+
 </body>
 </html>

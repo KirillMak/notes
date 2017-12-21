@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+
+ #     models:
+ #        article: "Article"
+ #     attributes:
+ #         article:
+  #          title: "Title of note"
+ #           text: "Text of note"

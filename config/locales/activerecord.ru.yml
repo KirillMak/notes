@@ -1,0 +1,8 @@
+ ru:
+    activerecord:
+      models:
+          article: "статья"
+      attributes:
+          article:
+              title: "Название заметки"
+              text: "Содержание заметки"
