@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" %>
+</head>
+<body>
+   <h1>Listing articles</h1>
+ 
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Text</th>
+        <th></th>
+      </tr>
+     
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.title %></td>
+          <td><%= article.text %></td>
+          <td><%= link_to 'Show', article_path(article) %></td>
+        </tr>
+      <% end %>
+    </table>
+</body>
+</html>
