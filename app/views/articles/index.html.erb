@@ -1,17 +1,37 @@
 <html>
 <head>
 
-
-  <style>
-
-  </style>
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" %>
 </head>
 <body>
 
+<div class = "note">
+  <h1>Список заметок</h1>
+  <table>
+      <tr>
+        <th>Название заметки</th>
+        <th>Содержимое заметки</th>
+        <th></th>
+      </tr>
+     
+      <% @articles.each do |article| %>
+            <tr>
+          <td><%= article.title %></td>
+          <td><%= article.text %></td>
+          <td><%= link_to 'Показать', article_path(article) %></td>
+          <td><%= link_to 'Удалить', article_path(article),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+          </td>
+          <% end %>
 
-<h1>Listing articles</h1>
-<%= link_to 'My Blog', controller: 'articles' %>
-<%= link_to 'New article', new_article_path %>
+  </table>
+
+  <nav><%= link_to 'Вернуться на главную', welcome_index_path %>
+    <%= link_to 'Добавить новую заметку', new_article_path %></nav>
+
+</div>
+
 
 
 </body>
